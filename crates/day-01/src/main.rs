@@ -1,5 +1,5 @@
 fn main() {
-    let (lhs, rhs) = parse(include_str!("../input/part1"));
+    let (lhs, rhs) = parse(include_str!("../input/real"));
     let solution_part2 = solve_part2(&lhs, &rhs);
     let solution_part1 = solve_part1(lhs, rhs);
     println!("Part 1: {solution_part1}");

@@ -1,6 +1,7 @@
 [workspace]
 members = [
   "crates/day-01",
+  "crates/day-02",
 ]
 resolver = "2"
 
