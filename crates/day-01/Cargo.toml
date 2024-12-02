@@ -1,0 +1,10 @@
+[package]
+name = "day-01"
+edition = "2021"
+publish = false
+version.workspace = true
+
+[dependencies]
+
+[lints]
+workspace = true
