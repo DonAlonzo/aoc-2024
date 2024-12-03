@@ -4,7 +4,26 @@ struct Instruction(u16, u16);
 fn main() {}
 
 fn parse(input: &str) -> Vec<Instruction> {
-    todo!();
+    let mut instructions = Vec::new();
+    for i in 0..input.len() - 3 {
+        if &input[i..i + 4] != "mul(" {
+            continue;
+        }
+        let Some(comma_ix) = input[i..].find(',') else {
+            break;
+        };
+        let Ok(lhs) = input[i + 4..i + comma_ix].parse() else {
+            continue;
+        };
+        let Some(right_parenthesis_ix) = input[i..].find(')') else {
+            break;
+        };
+        let Ok(rhs) = input[i + comma_ix + 1..i + right_parenthesis_ix].parse() else {
+            continue;
+        };
+        instructions.push(Instruction(lhs, rhs));
+    }
+    instructions
 }
 
 #[cfg(test)]
