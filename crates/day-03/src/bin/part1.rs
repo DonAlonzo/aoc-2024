@@ -2,9 +2,9 @@
 struct Instruction(u32, u32);
 
 fn main() {
-    let instructions = parse(include_str!("../input/real"));
-    let solution_part1 = solve_part1(&instructions);
-    println!("Part 1: {solution_part1}");
+    let instructions = parse(include_str!("../../input/real"));
+    let solution = solve(&instructions);
+    println!("{solution}");
 }
 
 fn parse(input: &str) -> Vec<Instruction> {
@@ -30,7 +30,7 @@ fn parse(input: &str) -> Vec<Instruction> {
     instructions
 }
 
-fn solve_part1(instructions: &[Instruction]) -> u32 {
+fn solve(instructions: &[Instruction]) -> u32 {
     instructions
         .iter()
         .fold(0, |acc, Instruction(lhs, rhs)| acc + lhs * rhs)
@@ -42,7 +42,7 @@ mod tests {
 
     #[test]
     fn test_parse() {
-        let instructions = parse(include_str!("../input/test"));
+        let instructions = parse(include_str!("../../input/test_part1"));
         assert_eq!(
             instructions,
             vec![
@@ -55,9 +55,10 @@ mod tests {
     }
 
     #[test]
-    fn test_solve_part1() {
-        let instructions = parse(include_str!("../input/test"));
-        let solution_part1 = solve_part1(&instructions);
-        assert_eq!(solution_part1, 161);
+    fn test_solve() {
+        let instructions = parse(include_str!("../../input/test_part1"));
+        let solution = solve(&instructions);
+        assert_eq!(solution, 161);
     }
 }
+
