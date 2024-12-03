@@ -1,4 +1,11 @@
+#[derive(Debug, PartialEq)]
+struct Instruction(u16, u16);
+
 fn main() {}
+
+fn parse(input: &str) -> Vec<Instruction> {
+    todo!();
+}
 
 #[cfg(test)]
 mod tests {
