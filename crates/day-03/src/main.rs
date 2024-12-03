@@ -1,5 +1,5 @@
 #[derive(Debug, PartialEq)]
-struct Instruction(u16, u16);
+struct Instruction(u32, u32);
 
 fn main() {}
 
@@ -24,6 +24,12 @@ fn parse(input: &str) -> Vec<Instruction> {
         instructions.push(Instruction(lhs, rhs));
     }
     instructions
+}
+
+fn solve_part1(instructions: &[Instruction]) -> u32 {
+    instructions
+        .iter()
+        .fold(0, |acc, Instruction(lhs, rhs)| acc + lhs * rhs)
 }
 
 #[cfg(test)]
