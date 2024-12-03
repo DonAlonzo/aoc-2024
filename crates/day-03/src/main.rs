@@ -43,4 +43,11 @@ mod tests {
             ]
         );
     }
+
+    #[test]
+    fn test_solve_part1() {
+        let instructions = parse(include_str!("../input/test"));
+        let solution_part1 = solve_part1(&instructions);
+        assert_eq!(solution_part1, 161);
+    }
 }
