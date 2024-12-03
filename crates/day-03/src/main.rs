@@ -1,7 +1,11 @@
 #[derive(Debug, PartialEq)]
 struct Instruction(u32, u32);
 
-fn main() {}
+fn main() {
+    let instructions = parse(include_str!("../input/real"));
+    let solution_part1 = solve_part1(&instructions);
+    println!("Part 1: {solution_part1}");
+}
 
 fn parse(input: &str) -> Vec<Instruction> {
     let mut instructions = Vec::new();
