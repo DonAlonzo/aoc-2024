@@ -4,6 +4,7 @@ members = [
   "crates/day-02",
   "crates/day-03",
   "crates/day-04",
+  "crates/day-05",
 ]
 resolver = "2"
 
